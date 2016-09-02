@@ -3,7 +3,7 @@ A simple client for [Serendipity](https://github.com/rmrschub/serendipity).
 Think of [mod_rewrite](http://httpd.apache.org/docs/current/mod/mod_rewrite.html) for Linked Data systems.
 
 
-## Installation & Running
+## Installation & Configuration
 Simply add serendipity-client as a dependency in your project's `pom.xml` as follows
 
 ```xml
@@ -21,9 +21,27 @@ Next, configure your `pom.xml` properties to contain **your** `serendipityURI`
 </properties>
 ```
 
+Add a `RepresentationEnricher` to your `javax.ws.rs.core.Application` and you are good to go! 
+```java
+@ApplicationPath("/")
+public class Server extends Application
+{
+	...
+
+	@Override
+	public Set<Object> getSingletons() 
+	{
+		...
+		RepresentationEnricher enricher = new RepresentationEnricher(serendipityURI);
+		return new HashSet<Object>(Arrays.asList(sthElse, enricher));
+	}
+	
+	...
+}
+```
 
 ## Usage
-What is left to do, is to annotate the HTTP methods of your resources that you wish to be enriched with affordances.
+Simply annotate the HTTP methods of the resources you wish to be enriched with affordances.
 ```java
 @GenerateAffordances
 @GET
