@@ -2,7 +2,34 @@
 A simple client for serendipity.
 
 ## Installation & Running
-TBD.
+Simply add serendipity-client as a dependency in your project's `pom.xml` as follows
+
+```
+<dependency>
+	<groupId>de.dfki.resc28</groupId>
+	<artifactId>serendipity-client</artifactId>
+	<version>0.1</version>
+</dependency>
+```
+
+Next, configure your `pom.xml` properties to contain **your** `serendipityURI` 
+```
+<properties>
+    <serendipityURI>http://serendipity/affordances</serendipityURI>
+</properties>
+```
+
+What is left to do, is to do is to annotate the HTTP methods of your resources that should contain affordances
+```
+@GenerateAffordances
+@GET
+@Path("/myResource")
+@Produces("text/turtle")
+public Response doGetAsTurtle() 
+{
+	...
+}
+``` 
 
 ## Usage
 TBD.
