@@ -4,7 +4,7 @@ A simple client for serendipity.
 ## Installation & Running
 Simply add serendipity-client as a dependency in your project's `pom.xml` as follows
 
-```
+```xml
 <dependency>
 	<groupId>de.dfki.resc28</groupId>
 	<artifactId>serendipity-client</artifactId>
@@ -13,14 +13,14 @@ Simply add serendipity-client as a dependency in your project's `pom.xml` as fol
 ```
 
 Next, configure your `pom.xml` properties to contain **your** `serendipityURI` 
-```
+```xml
 <properties>
     <serendipityURI>http://serendipity/affordances</serendipityURI>
 </properties>
 ```
 
 What is left to do, is to do is to annotate the HTTP methods of your resources that you wish to be enriched with affordances
-```
+```java
 @GenerateAffordances
 @GET
 @Path("/myResource")
