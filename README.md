@@ -1,5 +1,6 @@
 # serendipity-client
-A simple client for serendipity. Think of [mod_rewrite](http://httpd.apache.org/docs/current/mod/mod_rewrite.html) for Linked Data systems.
+A simple client for [Serendipity](https://github.com/rmrschub/serendipity). 
+Think of [mod_rewrite](http://httpd.apache.org/docs/current/mod/mod_rewrite.html) for Linked Data systems.
 
 ## Installation & Running
 Simply add serendipity-client as a dependency in your project's `pom.xml` as follows
