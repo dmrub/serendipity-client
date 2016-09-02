@@ -2,6 +2,7 @@
 A simple client for [Serendipity](https://github.com/rmrschub/serendipity). 
 Think of [mod_rewrite](http://httpd.apache.org/docs/current/mod/mod_rewrite.html) for Linked Data systems.
 
+
 ## Installation & Running
 Simply add serendipity-client as a dependency in your project's `pom.xml` as follows
 
@@ -20,6 +21,8 @@ Next, configure your `pom.xml` properties to contain **your** `serendipityURI`
 </properties>
 ```
 
+
+## Usage
 What is left to do, is to annotate the HTTP methods of your resources that you wish to be enriched with affordances.
 ```java
 @GenerateAffordances
@@ -30,10 +33,7 @@ public Response doGetAsTurtle()
 {
 	...
 }
-``` 
-
-## Usage
-TBD.
+```
 
 ## Contributing
 Contributions are very welcome.
