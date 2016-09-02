@@ -19,7 +19,7 @@ Next, configure your `pom.xml` properties to contain **your** `serendipityURI`
 </properties>
 ```
 
-What is left to do, is to do is to annotate the HTTP methods of your resources that should contain affordances
+What is left to do, is to do is to annotate the HTTP methods of your resources that you wish to be enriched with affordances
 ```
 @GenerateAffordances
 @GET
