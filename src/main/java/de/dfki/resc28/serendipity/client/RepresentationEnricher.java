@@ -71,7 +71,8 @@ public class RepresentationEnricher implements WriterInterceptor
             httpPost.setHeader("Content-type", contentType);
             httpPost.setEntity(entity);
             CloseableHttpResponse response = client.execute(httpPost);
-            RDFDataMgr.read(affordances, response.getEntity().getContent(), "", RDFLanguages.contentTypeToLang(response.getEntity().getContentType().getValue()));           
+//            RDFDataMgr.read(affordances, response.getEntity().getContent(), "", RDFLanguages.contentTypeToLang(response.getEntity().getContentType().getValue()));
+            RDFDataMgr.read(affordances, response.getEntity().getContent(), "", RDFLanguages.contentTypeToLang(contentType));           
             client.close();
             
             // add the instantiated action to the responseModel	
